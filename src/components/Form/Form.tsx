@@ -1,11 +1,7 @@
-import { Button } from "../Button/Button";
-import { Input } from "../Input/Input";
-
-export function Form() {
-  return (
-    <>
-      <Button type="button" text="Logar" />
-      <Input type="text" placeholder={"Digite sua senha"} />
-    </>
-  );
+import styles from "./Form.module.css";
+type FormProps = {
+  children: React.ReactNode;
+};
+export function Form({ children }: FormProps) {
+  return <form className={styles.form}>{children}</form>;
 }

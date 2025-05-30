@@ -1,5 +1,5 @@
 .button {
-  background-color: var(--btn-bg);
+  background-color: var(--btn-bg-hover);
   color: var(--btn-text);
   padding: 1rem 2rem;
   font-size: 1.6rem;
@@ -7,13 +7,27 @@
   border: 1px solid transparent;
   border-radius: 0.6rem;
   width: 80%;
-  max-width: 30rem;
   min-width: 25rem;
-  margin: 1rem;
   transition: 0.3s ease-in-out;
 }
 
 .button:hover {
   cursor: pointer;
-  background-color: var(--btn-bg-hover);
+  background-color: var(--color-primary-light);
+}
+
+.max-w-sm {
+  max-width: 30rem;
+}
+
+.max-w-md {
+  max-width: 50rem;
+}
+
+.max-w-lg {
+  max-width: 80rem;
+}
+
+.max-w-xl {
+  max-width: 100rem;
 }
