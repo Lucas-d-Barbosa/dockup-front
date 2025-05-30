@@ -21,7 +21,7 @@
 
   /* ===== Bordas e sombras ===== */
   --border-color: #e5e7eb; /* Cinza claro para bordas suaves */
-  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve e moderna */
+  --box-shadow: 1.2rem 0.5rem 2rem #ffffff33; /* Sombra leve e moderna */
 
   /* ===== Tipografia ===== */
   --font-size-xs: 1.2rem;
