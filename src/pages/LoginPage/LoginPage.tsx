@@ -2,11 +2,12 @@ import { Button } from "../../components/Button/Button";
 import { Form } from "../../components/Form/Form";
 import { Input } from "../../components/Input/Input";
 import { BiLogIn } from "react-icons/bi";
-import styles from "./Login.module.css";
+import styles from "./LoginPage.module.css";
 import logo from "../../assets/images/logo-sb.png";
 import bgImg from "../../assets/images/server.jpg";
 import { Label } from "../../components/Label/Label";
 import { FaUserShield } from "react-icons/fa";
+import { LinkRouter } from "../../components/LinkRouter/LinkRouter";
 export function Login() {
   return (
     <section className={styles.sectionLogin}>
@@ -56,7 +57,7 @@ export function Login() {
               icon={BiLogIn}
             />
             <span className="max-w-md">
-              Não possui uma conta? <a href="#">Cadastre-se</a>
+              Não possui uma conta? <LinkRouter ref="/" text="Cadastre-se" />
             </span>
           </div>
         </Form>

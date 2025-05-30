@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router";
-import { Login } from "../pages/Login/Login";
+import { Login } from "../pages/LoginPage/LoginPage";
 
 export function AppRouter() {
   return (
