@@ -1,5 +1,5 @@
 .button {
-  background-color: var(--btn-bg-hover);
+  background-color: var(--color-primary);
   color: var(--btn-text);
   padding: 1rem 2rem;
   font-size: 1.6rem;
@@ -9,11 +9,14 @@
   width: 80%;
   min-width: 25rem;
   transition: 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .button:hover {
   cursor: pointer;
-  background-color: var(--color-primary-light);
+  background-color: var(--color-primary-dark);
 }
 
 .max-w-sm {

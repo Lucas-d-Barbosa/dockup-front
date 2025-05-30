@@ -2,7 +2,7 @@ import { Button } from "../../components/Button/Button";
 import { Form } from "../../components/Form/Form";
 import { Input } from "../../components/Input/Input";
 import { HiMiniUserGroup } from "react-icons/hi2";
-
+import { BiLogIn } from "react-icons/bi";
 import styles from "./Login.module.css";
 import logo from "../../assets/images/logo-sb.png";
 import bgImg from "../../assets/images/server.jpg";
@@ -49,7 +49,12 @@ export function Login() {
                 id="senha"
               />
             </div>
-            <Button type="button" text="Logar" classWidth={"max-w-md"} />
+            <Button
+              type="button"
+              text="Logar"
+              classWidth={"max-w-md"}
+              icon={BiLogIn}
+            />
           </div>
         </Form>
       </div>
