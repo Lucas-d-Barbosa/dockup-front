@@ -20,3 +20,19 @@ body {
 .container {
   width: 100%;
 }
+
+.max-w-sm {
+  max-width: 30rem;
+}
+
+.max-w-md {
+  max-width: 50rem;
+}
+
+.max-w-lg {
+  max-width: 80rem;
+}
+
+.max-w-xl {
+  max-width: 100rem;
+}
