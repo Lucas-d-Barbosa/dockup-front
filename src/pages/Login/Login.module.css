@@ -13,7 +13,7 @@
 }
 
 .containerImg {
-  height: 30rem;
+  height: 25rem;
   cursor: pointer;
 }
 .containerImg img {
@@ -22,7 +22,7 @@
 
 .containerInput {
   width: 100%;
-  height: calc(100% - 30rem);
+  height: calc(100% - 25rem);
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -41,17 +41,31 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
+}
+
+span {
+  font-size: 1.7rem;
+  width: 80%;
+}
+
+span a {
+  font-weight: 600;
+  text-align: left;
 }
 
 .containerText {
   width: calc(100% - 50rem);
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 1rem;
   align-items: center;
   color: #fff;
+  padding: 1rem;
+  transition: opacity 0.3s ease, width 0.3s ease, padding 0.3s ease,
+    margin 0.3s ease;
 }
 .containerBgImg {
   background-color: #000000;
@@ -81,4 +95,65 @@
 .containerText h3 {
   font-size: clamp(1.6rem, 1.6vh + 1vw, 3rem);
   text-align: center;
+}
+
+.containerText svg {
+  cursor: pointer;
+}
+
+@media (max-width: 1020px) {
+  .sectionLogin {
+    justify-content: center;
+    align-items: center;
+  }
+  .containerLogin {
+    width: 80%;
+    min-height: 80vh;
+    height: auto;
+    padding: 1rem;
+    box-shadow: 0.1rem 1.2rem 1.2rem #0000002c;
+  }
+  .containerText {
+    opacity: 0;
+    width: 0;
+    padding: 0;
+    margin: 0;
+    pointer-events: none; /* evita interação */
+  }
+  .containerText > * {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .containerLogin {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 0 0 #0000;
+  }
+}
+
+@media (max-height: 600px) {
+  .containerLogin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .containerInput {
+    height: auto;
+  }
+  .containerImg {
+    display: none;
+  }
+}
+
+@media (min-height: 1000px) and (min-width: 1000px) {
+  .containerLogin {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .containerInput {
+    margin-top: 20rem;
+  }
 }

@@ -4,12 +4,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 7rem;
+  gap: 5.5rem;
+  padding: 3rem 0;
 }
 
-.containerImg {
-  height: 50rem;
-}
-.containerImg img {
-  height: 100%;
+@media (max-height: 600px) {
+  .form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }

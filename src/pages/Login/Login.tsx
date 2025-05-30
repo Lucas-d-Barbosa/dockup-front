@@ -1,12 +1,12 @@
 import { Button } from "../../components/Button/Button";
 import { Form } from "../../components/Form/Form";
 import { Input } from "../../components/Input/Input";
-import { HiMiniUserGroup } from "react-icons/hi2";
 import { BiLogIn } from "react-icons/bi";
 import styles from "./Login.module.css";
 import logo from "../../assets/images/logo-sb.png";
 import bgImg from "../../assets/images/server.jpg";
 import { Label } from "../../components/Label/Label";
+import { FaUserShield } from "react-icons/fa";
 export function Login() {
   return (
     <section className={styles.sectionLogin}>
@@ -55,6 +55,9 @@ export function Login() {
               classWidth={"max-w-md"}
               icon={BiLogIn}
             />
+            <span className="max-w-md">
+              Não possui uma conta? <a href="#">Cadastre-se</a>
+            </span>
           </div>
         </Form>
       </div>
@@ -62,9 +65,17 @@ export function Login() {
         <div className={styles.containerBgImg}>
           <img src={bgImg} alt="" />
         </div>
-        <HiMiniUserGroup size={350} />
-        <h2>Seja Bem-vindo ao Dockup!</h2>
-        <h3>A melhor plataforma de gerenciamento de arquivos</h3>
+        <FaUserShield
+          size={300}
+          aria-label="Ícone de um usuário protegido por um escudo, representando segurança"
+          title="Segurança dos seus arquivos"
+        />
+
+        <h2>Controle total dos seus arquivos</h2>
+        <h3>
+          Organize em estantes personalizadas, com acesso seguro de qualquer
+          lugar
+        </h3>
       </div>
     </section>
   );
