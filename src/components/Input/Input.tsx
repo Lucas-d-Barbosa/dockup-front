@@ -1,4 +1,4 @@
-import type { InputHTMLAttributes } from "react";
+import { forwardRef, type InputHTMLAttributes } from "react";
 import styles from "./Input.module.css";
 
 // Estende os atributos padrão e personaliza o tipo da prop "type"
@@ -7,12 +7,10 @@ type InputProps = {
   classWidth: string;
 } & InputHTMLAttributes<HTMLInputElement>;
 
-export function Input({ type = "text", classWidth, ...props }: InputProps) {
-  return (
-    <input
-      type={type}
-      {...props}
-      className={`${styles.input} ${styles[classWidth]}`}
-    />
-  );
-}
+export const Input = forwardRef<HTMLInputElement, InputProps>(
+  ({ classWidth, ...props }, ref) => {
+    return (
+      <input className={`${styles.input} ${classWidth}`} ref={ref} {...props} />
+    );
+  }
+);

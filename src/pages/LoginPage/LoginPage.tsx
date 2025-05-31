@@ -8,11 +8,43 @@ import bgImg from "../../assets/images/server.jpg";
 import { Label } from "../../components/Label/Label";
 import { FaUserShield } from "react-icons/fa";
 import { LinkRouter } from "../../components/LinkRouter/LinkRouter";
+import { useRef } from "react";
+import { ToastAdapter } from "../../Adapter/ToastAdapter";
 export function Login() {
+  const emailInput = useRef<HTMLInputElement>(null);
+  const passwordInput = useRef<HTMLInputElement>(null);
+
+  function handleValidateInputs(e: React.FormEvent<HTMLFormElement>) {
+    ToastAdapter.dismiss();
+    e.preventDefault();
+    const emailValue = emailInput.current?.value;
+    const passwordValue = passwordInput.current?.value;
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+    const regexPassword =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_\-+={}[\]|\\:;"'<>,.?/~`]).+$/;
+
+    if (!emailValue || !passwordValue) {
+      ToastAdapter.warning("Preencha todos os campos.");
+      return;
+    }
+
+    if (passwordValue.length < 8 || !regexPassword.test(passwordValue)) {
+      ToastAdapter.warning(
+        "Senha fraca! Use pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas, números e símbolos especiais."
+      );
+      return;
+    }
+
+    if (emailRegex.test(emailValue)) {
+      ToastAdapter.warning("Digite um email válido!");
+      return;
+    }
+  }
   return (
     <section className={styles.sectionLogin}>
       <div className={styles.containerLogin}>
-        <Form>
+        <Form onSubmit={handleValidateInputs}>
           <div className={styles.containerImg}>
             <img
               src={logo}
@@ -34,6 +66,7 @@ export function Login() {
                 placeholder={"Digite seu email"}
                 classWidth={"max-w-md"}
                 id="email"
+                ref={emailInput}
               />
             </div>
             <div className={styles.inputGroup}>
@@ -48,10 +81,11 @@ export function Login() {
                 placeholder={"Digite sua senha"}
                 classWidth={"max-w-md"}
                 id="senha"
+                ref={passwordInput}
               />
             </div>
             <Button
-              type="button"
+              type="submit"
               text="Logar"
               classWidth={"max-w-md"}
               icon={BiLogIn}
