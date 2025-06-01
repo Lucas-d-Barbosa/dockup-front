@@ -1,6 +1,6 @@
 .nav {
-  width: 5rem;
-  height: 10rem;
+  width: 20rem;
+  height: 14rem;
   display: flex;
   align-items: center;
   position: absolute;
@@ -10,7 +10,8 @@
   transition: 0.3s ease-in-out;
 }
 .nav img {
-  display: none;
+  width: 14rem;
+  height: 14rem;
 }
 
 .nav.active {
@@ -21,12 +22,6 @@
   align-items: flex-start;
   cursor: default;
   box-shadow: 4rem 12rem 5rem #00000033;
-}
-
-.nav.active img {
-  display: block;
-  width: 14rem;
-  height: 14rem;
 }
 
 .containerLogoButton {

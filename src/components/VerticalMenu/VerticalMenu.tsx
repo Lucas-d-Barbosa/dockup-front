@@ -1,5 +1,5 @@
 import styles from "./VericalMenu.module.css";
-import logo from "../../assets/images/logo-sb.png";
+import logo from "../../assets/images/logo-dockup-sb.png";
 import { AiFillHome, AiOutlineFile, AiOutlineLogout } from "react-icons/ai";
 import { FaBook, FaUserCircle, FaCog, FaQuestionCircle } from "react-icons/fa";
 import { LinkMenu } from "../LinkMenu/LinkMenu";

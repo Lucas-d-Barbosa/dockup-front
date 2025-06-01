@@ -1,16 +1,16 @@
 :root {
   /* ===== Cores base ===== */
-  --color-bg: #f9fafb; /* Fundo claro para contraste moderno */
+  --color-bg: #f5f3f7; /* Fundo claro com leve tom lilás */
   --color-surface: #ffffff; /* Superfícies brancas (cards, containers) */
-  --color-primary: #1d4ed8; /* Azul intenso (ícone da seta e destaque) */
-  --color-primary-dark: #1e40af; /* Azul escuro */
-  --color-primary-light: #60a5fa; /* Azul claro (hover, links, etc.) */
-  --color-accent: #3b82f6; /* Azul vibrante como realce */
+  --color-primary: #6b21a8; /* Roxo escuro principal */
+  --color-primary-dark: #581c87; /* Roxo ainda mais escuro */
+  --color-primary-light: #a855f7; /* Roxo claro para hover e destaques */
+  --color-accent: #9333ea; /* Roxo vibrante como realce */
 
   /* ===== Texto ===== */
-  --text-color: #1f2937; /* Cinza escuro (texto padrão) */
-  --text-muted: #6b7280; /* Cinza médio (texto secundário) */
-  --text-heading: #111827; /* Preto suave para títulos */
+  --text-color: #1e1b2e; /* Roxo bem escuro puxando pro cinza (texto padrão) */
+  --text-muted: #7c3aed; /* Roxo médio (texto secundário) */
+  --text-heading: #3b0764; /* Título com roxo bem profundo */
 
   /* ===== Links e Botões ===== */
   --link-color: var(--color-primary);
@@ -20,8 +20,8 @@
   --btn-text: #ffffff;
 
   /* ===== Bordas e sombras ===== */
-  --border-color: #e5e7eb; /* Cinza claro para bordas suaves */
-  --box-shadow: 0.5rem 0.2rem 1rem #ffffff33; /* Sombra leve e moderna */
+  --border-color: #e9d5ff; /* Lilás claro para bordas suaves */
+  --box-shadow: 0.5rem 0.2rem 1rem #6b21a833; /* Sombra leve com tom roxo translúcido */
 
   /* ===== Tipografia ===== */
   --font-size-xs: 1.2rem;
