@@ -10,6 +10,7 @@ import { FaUserShield } from "react-icons/fa";
 import { LinkRouter } from "../../components/LinkRouter/LinkRouter";
 import { useRef } from "react";
 import { ToastAdapter } from "../../Adapter/ToastAdapter";
+import { fakeUsers } from "../../database/fakeUsers";
 export function Login() {
   const emailInput = useRef<HTMLInputElement>(null);
   const passwordInput = useRef<HTMLInputElement>(null);
@@ -29,15 +30,24 @@ export function Login() {
       return;
     }
 
-    if (passwordValue.length < 8 || !regexPassword.test(passwordValue)) {
+    if (passwordValue.length < 4 || !regexPassword.test(passwordValue)) {
       ToastAdapter.warning(
         "Senha fraca! Use pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas, números e símbolos especiais."
       );
       return;
     }
 
-    if (emailRegex.test(emailValue)) {
+    if (!emailRegex.test(emailValue)) {
       ToastAdapter.warning("Digite um email válido!");
+      return;
+    }
+
+    const user = fakeUsers.find(
+      (user) => user.email === emailValue && user.password === passwordValue
+    );
+
+    if (!user) {
+      ToastAdapter.error("Email ou senha incorretos.");
       return;
     }
   }
