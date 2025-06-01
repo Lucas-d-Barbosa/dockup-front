@@ -1,10 +1,14 @@
 import { AppRouter } from "./routes/AppRouter";
+
 import "./styles/main.css";
 import "./styles/theme.css";
+import { AppProvider } from "./providers/AppProvider";
 function App() {
   return (
     <div className="container">
-      <AppRouter />
+      <AppProvider>
+        <AppRouter />
+      </AppProvider>
     </div>
   );
 }

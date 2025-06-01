@@ -1,7 +1,14 @@
+import type { FormEventHandler, FormHTMLAttributes } from "react";
 import styles from "./Form.module.css";
 type FormProps = {
+  onSubmit: FormEventHandler<HTMLFormElement>;
   children: React.ReactNode;
-};
-export function Form({ children }: FormProps) {
-  return <form className={styles.form}>{children}</form>;
+} & Omit<FormHTMLAttributes<HTMLFormElement>, "onSubmit">;
+
+export function Form({ children, onSubmit, ...props }: FormProps) {
+  return (
+    <form className={styles.form} {...props} onSubmit={onSubmit}>
+      {children}
+    </form>
+  );
 }
