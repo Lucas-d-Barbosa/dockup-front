@@ -11,9 +11,11 @@ import { LinkRouter } from "../../components/LinkRouter/LinkRouter";
 import { useRef } from "react";
 import { ToastAdapter } from "../../Adapter/ToastAdapter";
 import { fakeUsers } from "../../database/fakeUsers";
+import { useNavigate } from "react-router";
 export function Login() {
   const emailInput = useRef<HTMLInputElement>(null);
   const passwordInput = useRef<HTMLInputElement>(null);
+  const navigate = useNavigate();
 
   function handleValidateInputs(e: React.FormEvent<HTMLFormElement>) {
     ToastAdapter.dismiss();
@@ -49,6 +51,11 @@ export function Login() {
     if (!user) {
       ToastAdapter.error("Email ou senha incorretos.");
       return;
+    }
+
+    if (user) {
+      localStorage.setItem("token", "123");
+      navigate("/dashboard");
     }
   }
   return (
