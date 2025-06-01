@@ -1,14 +1,14 @@
 import { useState } from "react";
 import styles from "./VericalMenu.module.css";
 import logo from "../../assets/images/logo-sb.png";
-import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { AiFillHome, AiOutlineFile, AiOutlineLogout } from "react-icons/ai";
 import { FaBook, FaUserCircle, FaCog, FaQuestionCircle } from "react-icons/fa";
 import { LinkMenu } from "../LinkMenu/LinkMenu";
 import { LinkRouter } from "../LinkRouter/LinkRouter";
+import { LuSquareArrowLeft, LuSquareArrowRight } from "react-icons/lu";
 const buttonArrow = {
-  right: <FiChevronRight size={25} />,
-  left: <FiChevronLeft size={25} />,
+  right: <LuSquareArrowRight size={25} />,
+  left: <LuSquareArrowLeft size={25} />,
 };
 
 export function VerticalMenu() {
