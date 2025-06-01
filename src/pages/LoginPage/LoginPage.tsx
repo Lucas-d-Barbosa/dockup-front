@@ -3,7 +3,7 @@ import { Form } from "../../components/Form/Form";
 import { Input } from "../../components/Input/Input";
 import { BiLogIn } from "react-icons/bi";
 import styles from "./LoginPage.module.css";
-import logo from "../../assets/images/logo-sb.png";
+import logo from "../../assets/images/logo-dockup2-sb.png";
 import bgImg from "../../assets/images/server.jpg";
 import { Label } from "../../components/Label/Label";
 import { FaUserShield } from "react-icons/fa";
