@@ -1,5 +1,13 @@
-import { VerticalMenu } from "../../components/VerticalMenu/VerticalMenu";
+import { MainLayout } from "../../layouts/MainLayout/MainLayout";
 
 export function Dashboard() {
-  return <VerticalMenu />;
+  return (
+    <>
+      <MainLayout>
+        <div className="Hero">
+          <h2>Seja bem-vindo!</h2>
+        </div>
+      </MainLayout>
+    </>
+  );
 }

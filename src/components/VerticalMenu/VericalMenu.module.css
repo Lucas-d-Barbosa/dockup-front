@@ -1,23 +1,26 @@
 .nav {
   width: 5rem;
-  transition: 0.3s ease-in-out;
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  background: var(--color-primary-dark);
   cursor: pointer;
-  background: linear-gradient(
-    135deg,
-    var(--color-primary),
-    var(--color-primary-dark)
-  );
+  transition: 0.3s ease-in-out;
 }
+.nav img {
+  display: none;
+}
+
 .nav.active {
   width: 30rem;
   height: 100vh;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   cursor: default;
-}
-
-.nav img {
-  display: none;
+  box-shadow: 4rem 12rem 5rem #00000033;
 }
 
 .nav.active img {
@@ -28,7 +31,9 @@
 
 .containerLogoButton {
   display: flex;
+  width: 90%;
   align-items: center;
+  justify-content: space-around;
 }
 
 .buttonContainer {
@@ -43,6 +48,7 @@
 
 .buttonContainer button {
   display: flex;
+  align-self: flex-end;
   background-color: transparent;
   color: var(--btn-text);
   border: none;
@@ -63,6 +69,6 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  gap: 4rem;
   padding: 1rem 2rem;
 }

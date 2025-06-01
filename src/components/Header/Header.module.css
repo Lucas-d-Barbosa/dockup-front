@@ -1,0 +1,19 @@
+.header {
+  width: 100%;
+  height: 10rem;
+  background: var(--color-primary-dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  overflow: hidden;
+  height: 100%;
+  cursor: pointer;
+}
+
+.logo img {
+  overflow: hidden;
+  height: 100%;
+}

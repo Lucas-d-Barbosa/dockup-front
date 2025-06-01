@@ -1,4 +1,3 @@
-import { useState } from "react";
 import styles from "./VericalMenu.module.css";
 import logo from "../../assets/images/logo-sb.png";
 import { AiFillHome, AiOutlineFile, AiOutlineLogout } from "react-icons/ai";
@@ -11,11 +10,12 @@ const buttonArrow = {
   left: <LuSquareArrowLeft size={25} />,
 };
 
-export function VerticalMenu() {
-  const [activeMenu, setActiveMenu] = useState(false);
-  function handleActiveMenu() {
-    setActiveMenu((prevState) => !prevState);
-  }
+type VerticalMenuProps = {
+  activeMenu: boolean;
+  onToggle: () => void;
+};
+
+export function VerticalMenu({ activeMenu, onToggle }: VerticalMenuProps) {
   return (
     <nav className={`${styles.nav} ${activeMenu ? styles["active"] : ""}`}>
       <div className={styles.containerLogoButton}>
@@ -26,7 +26,7 @@ export function VerticalMenu() {
             activeMenu ? styles["active"] : ""
           }`}
         >
-          <button onClick={handleActiveMenu}>
+          <button onClick={onToggle}>
             {!activeMenu ? buttonArrow["right"] : buttonArrow["left"]}
           </button>
         </div>
