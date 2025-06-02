@@ -3,17 +3,28 @@
   height: 14rem;
   background: var(--color-primary-dark);
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
+  gap: 2rem;
 }
 
-.logo {
-  overflow: hidden;
-  height: 100%;
+.header h2 {
+  color: var(--btn-text);
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.header svg {
+  color: var(--btn-text);
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.header svg:hover {
+  color: var(--border-color);
   cursor: pointer;
 }
 
-.logo img {
-  overflow: hidden;
-  height: 100%;
+@media (max-width: 490px) {
+  .header h2 {
+    display: none;
+  }
 }
