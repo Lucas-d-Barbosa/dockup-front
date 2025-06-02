@@ -2,14 +2,14 @@ import { AiOutlineFile, AiOutlineLogout } from "react-icons/ai";
 import { Card } from "../../components/Card/Card";
 import { MainLayout } from "../../layouts/MainLayout/MainLayout";
 import { FaBook, FaUserCircle, FaCog, FaQuestionCircle } from "react-icons/fa";
-export function Dashboard() {
+import { useContext } from "react";
+import UserContext from "../../contexts/UserContext/UserContext";
+export function DashboardPage() {
+  const user = useContext(UserContext);
+  const name = user?.name ?? "amigo";
   return (
     <>
-      <MainLayout
-        pageTitle={
-          "Olá, Lucas! Bem-vindo ao Dockup. Aqui você organiza seus documentos com facilidade."
-        }
-      >
+      <MainLayout pageTitle={`Olá, ${name} Bem-vindo ao Dockup.`}>
         <>
           <Card
             icon={<AiOutlineFile size={150} title="Documentos" />}

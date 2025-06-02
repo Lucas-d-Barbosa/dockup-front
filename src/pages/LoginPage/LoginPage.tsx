@@ -54,7 +54,10 @@ export function Login() {
     }
 
     if (user) {
+      const { password, ...userSave } = user;
+      void password;
       localStorage.setItem("token", "123");
+      localStorage.setItem("user", JSON.stringify(userSave));
       navigate("/dashboard");
     }
   }
