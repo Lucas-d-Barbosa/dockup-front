@@ -1,10 +1,11 @@
 import styles from "./VericalMenu.module.css";
 import logo from "../../assets/images/logo-dockup-sb.png";
-import { AiFillHome, AiOutlineFile, AiOutlineLogout } from "react-icons/ai";
+import { AiOutlineFile, AiOutlineLogout } from "react-icons/ai";
 import { FaBook, FaUserCircle, FaCog, FaQuestionCircle } from "react-icons/fa";
 import { LinkMenu } from "../LinkMenu/LinkMenu";
 import { LinkRouter } from "../LinkRouter/LinkRouter";
 import { LuSquareArrowLeft, LuSquareArrowRight } from "react-icons/lu";
+import { MdDashboard } from "react-icons/md";
 const buttonArrow = {
   right: <LuSquareArrowRight size={25} />,
   left: <LuSquareArrowLeft size={25} />,
@@ -36,13 +37,13 @@ export function VerticalMenu({ activeMenu, onToggle }: VerticalMenuProps) {
         <div className={styles.areaItems}>
           <ul>
             <LinkMenu>
-              <AiFillHome style={{ marginRight: "8px" }} />
-
-              <LinkRouter ref={"/"} text={"Home"}></LinkRouter>
+              <MdDashboard style={{ marginRight: "8px" }} />
+              <LinkRouter ref={"/dashboard"} text={"Dashboard"} />
             </LinkMenu>
+
             <LinkMenu>
               <AiOutlineFile style={{ marginRight: "8px" }} />
-              <LinkRouter ref={"/documentos"} text={"Documentos"}></LinkRouter>
+              <LinkRouter ref={"/documents"} text={"Documentos"}></LinkRouter>
             </LinkMenu>
 
             <LinkMenu>

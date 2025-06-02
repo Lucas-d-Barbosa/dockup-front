@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router";
 import { Login } from "../pages/LoginPage/LoginPage";
 import { DashboardPage } from "../pages/DashboardPage/DashboardPage";
 import { PrivateRoute } from "../components/PrivateRoute/PrivateRoute";
+import { DocumentsPage } from "../pages/DocumentsPage/DocumentsPage";
 
 export function AppRouter() {
   return (
@@ -14,6 +15,14 @@ export function AppRouter() {
           element={
             <PrivateRoute>
               <DashboardPage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/documents"
+          element={
+            <PrivateRoute>
+              <DocumentsPage />
             </PrivateRoute>
           }
         />
