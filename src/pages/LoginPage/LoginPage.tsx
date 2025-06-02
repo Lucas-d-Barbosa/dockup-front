@@ -9,7 +9,7 @@ import { Label } from "../../components/Label/Label";
 import { FaUserShield } from "react-icons/fa";
 import { LinkRouter } from "../../components/LinkRouter/LinkRouter";
 import { useRef } from "react";
-import { ToastAdapter } from "../../Adapter/ToastAdapter";
+import { ToastAdapter } from "../../adapter/ToastAdapter";
 import { fakeUsers } from "../../database/fakeUsers";
 import { useNavigate } from "react-router";
 export function Login() {
