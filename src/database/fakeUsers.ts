@@ -5,7 +5,7 @@ export const fakeUsers: User[] = [
     id: "u1",
     email: "flucas.dev@gmail.com",
     password: "Senha123!",
-    name: "Lucas Silva",
+    name: "Lucas Barbosa",
     typeUser: "admin",
     createdAt: new Date("2023-01-01T10:00:00Z"),
     updatedAt: new Date("2023-01-02T10:00:00Z"),

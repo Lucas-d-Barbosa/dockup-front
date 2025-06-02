@@ -9,7 +9,7 @@ export function DashboardPage() {
   const name = user?.name ?? "amigo";
   return (
     <>
-      <MainLayout pageTitle={`Olá, ${name} Bem-vindo ao Dockup.`}>
+      <MainLayout pageTitle={`Olá, ${name}. Seja bem-vindo ao Dockup.`}>
         <>
           <Card
             icon={<AiOutlineFile size={150} title="Documentos" />}
