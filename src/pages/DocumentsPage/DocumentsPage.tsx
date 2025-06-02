@@ -28,6 +28,7 @@ export function DocumentsPage() {
           <div
             onMouseEnter={() => setHoveredFileId(file.id)}
             onMouseLeave={() => setHoveredFileId(null)}
+            key={file.id}
           >
             <Card
               icon={
