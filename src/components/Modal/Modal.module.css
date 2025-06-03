@@ -9,6 +9,7 @@
   min-width: 30rem;
   max-width: 80rem;
   height: auto;
+  max-height: 60rem;
   border-radius: 0.8rem;
   background-color: #fff;
   position: fixed;
