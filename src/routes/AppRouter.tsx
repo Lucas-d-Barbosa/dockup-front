@@ -3,7 +3,7 @@ import { Login } from "../pages/LoginPage/LoginPage";
 import { DashboardPage } from "../pages/DashboardPage/DashboardPage";
 import { PrivateRoute } from "../components/PrivateRoute/PrivateRoute";
 import { DocumentsPage } from "../pages/DocumentsPage/DocumentsPage";
-
+import { RegisterPage } from "../pages/RegisterPage/RegistePage";
 export function AppRouter() {
   return (
     <Router>
@@ -26,8 +26,15 @@ export function AppRouter() {
             </PrivateRoute>
           }
         />
+        <Route
+          path="/register"
+          element={
+            <PrivateRoute>
+              <RegisterPage />
+            </PrivateRoute>
+          }
+        />
 
-        {/* Caso a rota não exista, redireciona para login */}
         <Route path="*" element={<Navigate to="/login" />} />
       </Routes>
     </Router>
