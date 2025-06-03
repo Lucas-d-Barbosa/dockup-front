@@ -1,0 +1,23 @@
+.button {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--color-primary);
+  box-shadow: 0.2rem 0.4rem 0.5rem #0000001a;
+
+  color: var(--btn-text);
+  border: 1px solid #e1e1e1;
+  border-radius: 1.8rem;
+  border: none;
+  font-size: 2rem;
+  font-weight: 600;
+
+  cursor: pointer;
+  padding: 2rem;
+
+  transition: 0.3s ease-in-out;
+}
+
+.button:hover {
+  background-color: var(--link-hover);
+}
