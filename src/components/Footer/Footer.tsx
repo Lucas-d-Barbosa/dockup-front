@@ -6,8 +6,12 @@ export function Footer() {
         &copy; {new Date().getFullYear()} Dockup. Todos os direitos reservados.
       </p>
       <p>
-        Desenvolvido por <strong>Francisco Lucas</strong> e{" "}
+        Pensado e Desenvolvido por <strong>Francisco Lucas</strong> e{" "}
         <strong>Leonardo Moraes</strong>.
+      </p>
+      <p>
+        <strong>A ARI Plus</strong> foi a responsável pela criação da nossa
+        logo.
       </p>
     </footer>
   );

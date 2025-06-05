@@ -22,25 +22,9 @@ export function Login() {
     e.preventDefault();
     const emailValue = emailInput.current?.value;
     const passwordValue = passwordInput.current?.value;
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-
-    const regexPassword =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_\-+={}[\]|\\:;"'<>,.?/~`]).+$/;
 
     if (!emailValue || !passwordValue) {
       ToastAdapter.warning("Preencha todos os campos.");
-      return;
-    }
-
-    if (passwordValue.length < 4 || !regexPassword.test(passwordValue)) {
-      ToastAdapter.warning(
-        "Senha fraca! Use pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas, números e símbolos especiais."
-      );
-      return;
-    }
-
-    if (!emailRegex.test(emailValue)) {
-      ToastAdapter.warning("Digite um email válido!");
       return;
     }
 
