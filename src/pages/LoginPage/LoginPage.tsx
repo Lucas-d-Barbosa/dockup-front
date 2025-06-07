@@ -95,7 +95,8 @@ export function Login() {
               icon={BiLogIn}
             />
             <span className="max-w-md">
-              Não possui uma conta? <LinkRouter ref="/" text="Cadastre-se" />
+              Não possui uma conta?{" "}
+              <LinkRouter ref="/register" text="Cadastre-se" />
             </span>
           </div>
         </Form>

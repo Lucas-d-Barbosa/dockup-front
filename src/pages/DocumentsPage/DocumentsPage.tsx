@@ -8,6 +8,7 @@ import styles from "./DocumentesPage.module.css";
 import { FaCloudDownloadAlt } from "react-icons/fa";
 import { useRef, useState } from "react";
 import { Modal } from "../../components/Modal/Modal";
+import type { File } from "../../models/File";
 export function DocumentsPage() {
   const [hoveredFileId, setHoveredFileId] = useState<string | null>(null);
   const [activeModalUpload, setActiveModalUpload] = useState(false);
@@ -21,7 +22,7 @@ export function DocumentsPage() {
   }
 
   const handleClick = () => {
-    fileInputRef.current?.click(); // 👈 uso seguro com optional chaining
+    fileInputRef.current?.click();
   };
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -30,6 +31,23 @@ export function DocumentsPage() {
       console.log("Arquivo selecionado:", file.name);
     }
   };
+
+  function handleFormSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const selectedFile = fileInputRef.current?.files?.[0];
+    if (selectedFile) {
+      const newFile = {
+        id: `f${files.length + 1}`,
+        userId: "u1",
+        shelveId: "s1",
+        name: selectedFile?.name,
+        path: "/files/u1/s1/" + selectedFile?.name,
+        createdAt: new Date("2023-01-12T10:00:00Z"),
+        updatedAt: new Date("2023-01-12T10:00:00Z"),
+      } as File;
+      files.push(newFile);
+    }
+  }
 
   return (
     <MainLayout
@@ -70,8 +88,15 @@ export function DocumentsPage() {
         title="Adicionar Arquivo"
         active={activeModalUpload}
         onClose={() => setActiveModalUpload(false)}
+        typeActionName={"Enviar"}
+        formId="formModal"
       >
-        <form action="" encType="multipart/form-data">
+        <form
+          action=""
+          encType="multipart/form-data"
+          id="formModal"
+          onSubmit={handleFormSubmit}
+        >
           <input
             type="file"
             ref={fileInputRef}
@@ -85,9 +110,6 @@ export function DocumentsPage() {
             className={styles.buttonUpload}
           >
             Selecionar Arquivo
-          </button>
-          <button type="submit" className={styles.buttonSumbit}>
-            Enviar
           </button>
         </form>
       </Modal>
