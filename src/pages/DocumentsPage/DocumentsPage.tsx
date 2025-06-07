@@ -1,6 +1,5 @@
 import { AiOutlineFile } from "react-icons/ai";
 import { Card } from "../../components/Card/Card";
-import { fakeFiles } from "../../database/fakeFiles";
 import { MainLayout } from "../../layouts/MainLayout/MainLayout";
 import { format } from "date-fns";
 import { FaPlus } from "react-icons/fa";
@@ -9,10 +8,13 @@ import { FaCloudDownloadAlt } from "react-icons/fa";
 import { useRef, useState } from "react";
 import { Modal } from "../../components/Modal/Modal";
 import type { File } from "../../models/File";
+import { useFiles } from "../../contexts/FileContext/useFiles";
+import { ToastAdapter } from "../../adapter/ToastAdapter";
 export function DocumentsPage() {
   const [hoveredFileId, setHoveredFileId] = useState<string | null>(null);
   const [activeModalUpload, setActiveModalUpload] = useState(false);
-  const files = fakeFiles;
+  const { files, dispatch } = useFiles();
+
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   function handleModalUpload() {
@@ -34,6 +36,8 @@ export function DocumentsPage() {
 
   function handleFormSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    ToastAdapter.dismiss();
+
     const selectedFile = fileInputRef.current?.files?.[0];
     if (selectedFile) {
       const newFile = {
@@ -42,10 +46,13 @@ export function DocumentsPage() {
         shelveId: "s1",
         name: selectedFile?.name,
         path: "/files/u1/s1/" + selectedFile?.name,
-        createdAt: new Date("2023-01-12T10:00:00Z"),
-        updatedAt: new Date("2023-01-12T10:00:00Z"),
+        createdAt: new Date(),
+        updatedAt: new Date(),
       } as File;
-      files.push(newFile);
+      dispatch({ type: "ADD_FILE", payload: newFile });
+
+      ToastAdapter.success("Arquivo adicionado com sucesso!");
+      handleModalUpload();
     }
   }
 
